@@ -246,6 +246,15 @@ public class PDFProtectorPage extends PageBase {
         RemoveConfidencialAlert.click();
         Thread.sleep(1000);
     }
+
+    public static void decrypt_PDF_LocalKey_Without_Removing_Confidencial(String Path, WebDriver driver, boolean b, String key) throws InterruptedException {
+        PDFarea.sendKeys(Path);
+        Thread.sleep(500);
+        loadkey.sendKeys(key);
+        // if boolean b is true then we are doing full decryption and if it's false then we dont need to select edit button and we are in selction decryption
+        if (b == true) {
+        }
+    }
 }
 
 

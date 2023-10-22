@@ -18,6 +18,7 @@ import java.time.Duration;
 
 import static Tests.EncryptionToolsTest.*;
 import static Tests.ImageprotectorTest.tracerID;
+import static Tests.PDF_ProtectorTest_With_LocalStorageKey.Local_Storage_Key;
 
 public class PDFProtectorTest extends TestBase {
     static HomePage homeobject;
@@ -125,7 +126,7 @@ public class PDFProtectorTest extends TestBase {
         driver.navigate().refresh();
         driver.switchTo().alert().accept();
         PDFProtectorPage.PDFprotector.click();
-        PDFProtectorPage.Decrypt_PDF_Whole(SvedpdfPATH, driver);
+        PDFProtectorPage.decrypt_PDF_LocalKey_Without_Removing_Confidencial(SvedpdfPATH, driver, true, Local_Storage_Key);
         Thread.sleep(3000);
         Assert.assertTrue(PDFProtectorPage.reEncryptbtn.isDisplayed());
         PDFProtectorPage.editBtn2.click();

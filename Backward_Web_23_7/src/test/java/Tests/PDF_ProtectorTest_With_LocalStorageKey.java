@@ -37,6 +37,7 @@ public class PDF_ProtectorTest_With_LocalStorageKey extends TestBase {
 
     static String Saved_Page_Range_Encryption = LoadProperties.testData.getProperty("Saved_Page_Range_Encryption");
     public static String Local_Storage_Key = LoadProperties.testData.getProperty("Local_Storage_Key");
+    public static String Local_Storage_Key_Staging = LoadProperties.testData.getProperty("Local_Storage_Key_Staging");
 
 
     public PDF_ProtectorTest_With_LocalStorageKey() throws AWTException {
@@ -126,7 +127,8 @@ public class PDF_ProtectorTest_With_LocalStorageKey extends TestBase {
         page = new PageBase(driver);
         loginobject.LOGIN(usernameQA, passwordQA);
         pdfProtectorPage.PDFprotector.click();
-        PDFProtectorPage.decrypt_PDF_LocalKey(SvedpdfPATH, driver, true, Local_Storage_Key);
+        //PDFProtectorPage.decrypt_PDF_LocalKey(SvedpdfPATH, driver, true, Local_Storage_Key);
+        PDFProtectorPage.decrypt_PDF_LocalKey(SvedpdfPATH, driver, true, Local_Storage_Key_Staging);
         PDFProtectorPage.DetailBtn.click();
         Assert.assertTrue(PDFProtectorPage.Remove_Confidential_Text.isDisplayed());
         Assert.assertEquals(PDFProtectorPage.Remove_Confidential_Text.getText(), "This PDF does not contain encryption.");
@@ -148,7 +150,8 @@ public class PDF_ProtectorTest_With_LocalStorageKey extends TestBase {
         page = new PageBase(driver);
         loginobject.LOGIN(usernameQA, passwordQA);
         pdfProtectorPage.PDFprotector.click();
-        PDFProtectorPage.decrypt_PDF_LocalKey(Saved_Find_and_Encrypt, driver, true, Local_Storage_Key);
+        //PDFProtectorPage.decrypt_PDF_LocalKey(Saved_Find_and_Encrypt, driver, true, Local_Storage_Key);
+        PDFProtectorPage.decrypt_PDF_LocalKey(SvedpdfPATH, driver, true, Local_Storage_Key_Staging);
         PDFProtectorPage.DetailBtn.click();
         Assert.assertTrue(PDFProtectorPage.Remove_Confidential_Text.isDisplayed());
         Assert.assertEquals(PDFProtectorPage.Remove_Confidential_Text.getText(), "This PDF does not contain encryption.");
@@ -170,7 +173,8 @@ public class PDF_ProtectorTest_With_LocalStorageKey extends TestBase {
         page = new PageBase(driver);
         loginobject.LOGIN(usernameQA, passwordQA);
         pdfProtectorPage.PDFprotector.click();
-        PDFProtectorPage.decrypt_PDF_LocalKey(Saved_Page_Range_Encryption, driver, true, Local_Storage_Key);
+        //PDFProtectorPage.decrypt_PDF_LocalKey(Saved_Page_Range_Encryption, driver, true, Local_Storage_Key);
+        PDFProtectorPage.decrypt_PDF_LocalKey(SvedpdfPATH, driver, true, Local_Storage_Key_Staging);
         PDFProtectorPage.DetailBtn.click();
         Assert.assertTrue(PDFProtectorPage.Remove_Confidential_Text.isDisplayed());
         Assert.assertEquals(PDFProtectorPage.Remove_Confidential_Text.getText(), "This PDF does not contain encryption.");

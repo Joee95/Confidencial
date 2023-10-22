@@ -126,7 +126,8 @@ public class PDFProtectorTest extends TestBase {
         driver.navigate().refresh();
         driver.switchTo().alert().accept();
         PDFProtectorPage.PDFprotector.click();
-        PDFProtectorPage.decrypt_PDF_LocalKey_Without_Removing_Confidencial(SvedpdfPATH, driver, true, Local_Storage_Key);
+        PDFProtectorPage.Decrypt_PDF_Whole(SvedpdfPATH, driver);
+        //PDFProtectorPage.decrypt_PDF_LocalKey_Without_Removing_Confidencial(SvedpdfPATH, driver, true, Local_Storage_Key);
         Thread.sleep(3000);
         Assert.assertTrue(PDFProtectorPage.reEncryptbtn.isDisplayed());
         PDFProtectorPage.editBtn2.click();

@@ -24,6 +24,7 @@ public class TestBase {
     public static String downloadPath = System.getProperty("user.dir") + "\\Downloads\\EncryptedFile";
     public static String URLprod = LoadProperties.testData.getProperty("URLprod");
     public String URLQA = LoadProperties.testData.getProperty("URLQA");
+    public String URLStaging = LoadProperties.testData.getProperty("URLStaging");
 
     public TestBase() throws AWTException {
     }
@@ -45,7 +46,7 @@ public class TestBase {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--force-device-scale-factor=1");
         driver = new ChromeDriver(options);
-        driver.navigate().to(URLQA);
+        driver.navigate().to(URLStaging);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
         driver.manage().window().maximize();
     }
